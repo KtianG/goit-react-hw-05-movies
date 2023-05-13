@@ -17,7 +17,7 @@ export const Home = () => {
 
   const renderMovie = ({ title, poster_path, id }) => {
     const image_url = `https://image.tmdb.org/t/p/w500${poster_path}`;
-    return <MovieCard key={id} title={title} image_src={image_url} />;
+    return <MovieCard key={id} id={id} title={title} image_src={image_url} />;
   };
 
   return <div className={css.Home}>{trendingMovies.map(renderMovie)}</div>;

@@ -1,12 +1,17 @@
 .movieCard {
   width: 280px;
   height: 440px;
+  text-decoration: none;
 
   transition: scale 250ms ease;
 }
 .movieCard:hover {
   scale: 1.02;
   cursor: pointer;
+}
+
+.movieCard:hover > .movieCard__details {
+  color: var(--accent);
 }
 
 .movieCard__image {

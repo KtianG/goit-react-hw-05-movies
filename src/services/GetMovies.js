@@ -18,3 +18,17 @@ export async function getTrendingMovies() {
     return null;
   }
 }
+
+export async function getMovieDetails(id) {
+  try {
+    const url = BASE_URL + `movie/${id}`;
+    console.log(url);
+
+    const movie_details = await axios.get(url, { params: parameters });
+    return movie_details.data;
+  } catch (error) {
+    console.log(error);
+
+    return null;
+  }
+}
