@@ -1,0 +1,22 @@
+.Home {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 0 auto;
+  padding: 30px;
+  max-width: 100%;
+}
+
+@media screen and (width > 1200px) {
+  .Home {
+    max-width: 1200px;
+  }
+}
+
+@media screen and (width < 768px) {
+  .Home {
+    flex-direction: column;
+    padding: 20px;
+  }
+}

@@ -1,0 +1,110 @@
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.homeBg {
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.457);
+  background-image: url('/src/images/header-home-bg-min.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 130px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.header__items {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  padding: 30px 20px;
+  gap: 15px;
+}
+
+.header__title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  transition-duration: 250ms;
+}
+
+.header__list {
+  transition-duration: 250ms;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  margin-left: auto;
+  gap: 39px;
+}
+
+.header__link {
+  color: var(--header-text-color);
+  text-decoration: none;
+  font-weight: 500;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  transition-duration: 250ms;
+}
+
+.header__link:focus {
+  scale: 1.06;
+  text-shadow: -2px 2px 15px rgba(255, 228, 210, 0.9);
+}
+
+.headerIcon {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  fill: var(--header-text-color);
+}
+
+.logo {
+  display: none;
+  font-weight: 500;
+  font-size: 30px;
+  color: var(--header-text-color);
+  letter-spacing: 0.03em;
+  margin: 0;
+  transition-duration: 250ms;
+}
+
+.position {
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .homeBg {
+    background-image: url('/src/images/header-home-bg-mid.jpg');
+  }
+  .header__items {
+    padding: 41px 71px;
+  }
+
+  .header__title {
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    transition-duration: 250ms;
+  }
+}
+.logo {
+  display: flex;
+}
+
+@media (min-width: 1024px) {
+  .homeBg {
+    background-image: url('/src/images/header-home-bg-max.jpg');
+  }
+
+  .header__link:hover {
+    scale: 1.06;
+    text-shadow: -2px 2px 15px rgba(255, 228, 210, 0.9);
+  }
+}

@@ -1,0 +1,49 @@
+.movieCard {
+  width: 280px;
+  height: 440px;
+
+  transition: scale 250ms ease;
+}
+.movieCard:hover {
+  scale: 1.02;
+  cursor: pointer;
+}
+
+.movieCard__image {
+  width: 280px;
+  height: 398px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.movieCard__details {
+  margin-top: 10px;
+  color: var(--title);
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .movieCard {
+    width: 294px;
+    height: 440px;
+  }
+
+  .movieCard__image {
+    width: 293px;
+    height: 398px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .movieCard {
+    width: 274px;
+    height: 440px;
+  }
+  .movieCard__image {
+    width: 274px;
+    height: 398px;
+  }
+}
