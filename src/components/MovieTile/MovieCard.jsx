@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 export const MovieCard = ({ image_src, title, id }) => {
-  const link = `movies/${id}`;
+  const link = `/movies/${id}`;
   return (
     <Link to={link} className={css.movieCard}>
       <img className={css.movieCard__image} src={image_src} alt={title} />

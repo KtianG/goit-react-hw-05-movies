@@ -9,7 +9,6 @@ const parameters = {
 export async function getTrendingMovies() {
   try {
     const url = BASE_URL + 'trending/movie/day';
-
     const trending_movies = await axios.get(url, { params: parameters });
     return trending_movies.data.results;
   } catch (error) {
@@ -22,13 +21,46 @@ export async function getTrendingMovies() {
 export async function getMovieDetails(id) {
   try {
     const url = BASE_URL + `movie/${id}`;
-    console.log(url);
-
     const movie_details = await axios.get(url, { params: parameters });
     return movie_details.data;
   } catch (error) {
     console.log(error);
 
+    return null;
+  }
+}
+
+export async function getMovieCredits(id) {
+  try {
+    const url = BASE_URL + `movie/${id}/credits`;
+    const movie_details = await axios.get(url, { params: parameters });
+    return movie_details.data;
+  } catch (error) {
+    console.log(error);
+
+    return null;
+  }
+}
+
+export async function getMovieReviews(id) {
+  try {
+    const url = BASE_URL + `movie/${id}/reviews`;
+    const movie_details = await axios.get(url, { params: parameters });
+    return movie_details.data;
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+}
+
+export async function getMovieSearch(query) {
+  try {
+    const url = BASE_URL + `search/movie`;
+    parameters.query = query;
+    const movie_details = await axios.get(url, { params: parameters });
+    return movie_details.data;
+  } catch (error) {
+    console.log(error);
     return null;
   }
 }
