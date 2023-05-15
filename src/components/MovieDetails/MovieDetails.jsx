@@ -1,5 +1,11 @@
 import React from 'react';
-import { useParams, Outlet, NavLink } from 'react-router-dom';
+import {
+  useParams,
+  Outlet,
+  NavLink,
+  Link,
+  useLocation,
+} from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getMovieDetails } from 'services/GetMovies';
 
@@ -8,7 +14,9 @@ import css from './MovieDetails.module.css';
 const MovieDetails = () => {
   const { movieId } = useParams();
   const [isLoading, setLoading] = useState(true);
-  const [movie, setMovie] = useState({});
+  const [movie, setMovie] = useState([]);
+  const location = useLocation();
+  const backLinkHref = location.state?.from ?? '/';
 
   useEffect(() => {
     const fetchMovie = async () => {
@@ -47,14 +55,25 @@ const MovieDetails = () => {
 
   return (
     <div className={css.MovieDetails}>
+      <Link to={backLinkHref} className={css.backButton}>
+        Back
+      </Link>
       {isLoading ? '' : renderMovieInfo()}
 
       <h3 className={css.movieInfo__sectionTitle}>Additional Info</h3>
       <div className={css.movieInfo__buttons}>
-        <NavLink to="cast" className={css.movieInfo__button}>
+        <NavLink
+          to="cast"
+          className={css.movieInfo__button}
+          state={{ from: backLinkHref }}
+        >
           Cast
         </NavLink>
-        <NavLink to="reviews" className={css.movieInfo__button}>
+        <NavLink
+          to="reviews"
+          className={css.movieInfo__button}
+          state={{ from: backLinkHref }}
+        >
           Reviews
         </NavLink>
       </div>

@@ -1,6 +1,27 @@
 .MovieDetails {
   max-width: 1024px;
+  padding: 48px 20px 0px;
   margin: 0 auto;
+}
+
+.backButton {
+  color: var(--title);
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 14px;
+
+  border: 1px solid black;
+  padding: 10px 20px;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  transition-duration: 250ms;
+  margin-bottom: 30px;
+}
+
+.backButton:hover {
+  color: var(--accent);
 }
 
 .movieInfo {
@@ -13,11 +34,6 @@
   font-weight: 500;
   line-height: 20px;
   color: black;
-}
-
-.movieInfo__container {
-  position: relative;
-  padding: 48px 20px 0px;
 }
 
 .movieInfo__poster {
@@ -43,9 +59,8 @@ p {
 }
 
 .movieInfo__buttons {
-  margin-top: 21px;
-
-  padding-bottom: 40px;
+  margin-top: 20px;
+  padding: 0px 20px 20px;
 }
 
 .movieInfo__button {
@@ -100,6 +115,7 @@ p {
 @media screen and (min-width: 1024px) {
   .movieInfo {
     width: 1024px;
+    max-width: 100%;
     padding: 50px 30px 40px 30px;
   }
 
