@@ -6,6 +6,8 @@ import { getMovieReviews } from 'services/GetMovies';
 
 import css from './Reviews.module.css';
 
+var parse = require('html-react-parser');
+
 const Reviews = () => {
   const { movieId } = useParams();
   const [reviews, setReviews] = useState([]);
@@ -23,7 +25,7 @@ const Reviews = () => {
     return (
       <li className={css.reviewItem} key={id}>
         <h3>{author}</h3>
-        <p>{content}</p>
+        <p>{parse(content)}</p>
       </li>
     );
   };
